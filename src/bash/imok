@@ -1,0 +1,10 @@
+#!/bin/bash
+
+bash -c "$*"
+Z=$?
+if [ "0" != "$Z" ] ; then
+    growlnotify -m "NOT OK! ($Z)" NOT OK
+else
+    growlnotify -m "ok" ok
+fi
+exit $Z
